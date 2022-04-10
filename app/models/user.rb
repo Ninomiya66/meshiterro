@@ -8,8 +8,8 @@ class User < ApplicationRecord
   
   has_one_attached :profile_image
   
-  def get_profile_image
-    
+def get_profile_image
+  
     unless profile_image.attached?
       
       file_path = Rails.root.join('app/assets/images/sample-author1.jpg')
@@ -18,8 +18,8 @@ class User < ApplicationRecord
       
     end
     
-    profile_image.variant(resize_to_limit: [width, height]).processed
+    profile_image.variant(resize_to_limit: [width, heig]).processed
     
-  end
+end
   
 end
