@@ -8,7 +8,7 @@ class User < ApplicationRecord
   
   has_one_attached :profile_image
   
-def get_profile_image
+def get_profile_image(width,height)
   
     unless profile_image.attached?
       
@@ -18,7 +18,7 @@ def get_profile_image
       
     end
     
-    profile_image.variant(resize_to_limit: [width, heig]).processed
+    profile_image.variant(resize_to_limit: [width, height]).processed
     
 end
   
